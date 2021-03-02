@@ -18,7 +18,9 @@ Description=CDEM Logger
 After=multi-user.target
 
 [Service]
-Type=idle
+Type=simple
+Restart=on-failure
+RestartSec=10s
 ExecStart=/home/pi/cdem-logger/logger >> /home/pi/cdem_log 2>&1
 
 [Install]
