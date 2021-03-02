@@ -4,28 +4,13 @@ Simple script to log output of a CDEM device to log file. Can for example be run
 
 ## Systemd Service
 
-Create unit file:
+Copy unit file:
 
 ```bash
-sudo nano /lib/systemd/system/cdem_logger.service
+sudo cp ./cdem_logger.service /lib/systemd/system/
 ```
 
-Add the following (make sure to adjust path):
-
-```text
-[Unit]
-Description=CDEM Logger
-After=multi-user.target
-
-[Service]
-Type=simple
-Restart=on-failure
-RestartSec=10s
-ExecStart=/home/pi/cdem-logger/logger >> /home/pi/cdem_log 2>&1
-
-[Install]
-WantedBy=multi-user.target
-```
+Change the path to the `logger` if needed.
 
 Set correct permissions:
 
