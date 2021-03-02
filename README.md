@@ -30,3 +30,23 @@ Reboot
 ```bash
 sudo reboot
 ```
+
+### Useful commands
+
+Check status
+
+```bash
+systemctl status cdem_logger
+```
+
+Stop the logger
+
+```bash
+systemctl stop cdem_logger
+```
+
+Start the logger
+
+```bash
+systemctl start cdem_logger
+```
