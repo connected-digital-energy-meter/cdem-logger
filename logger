@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 DEVICE="/dev/ttyUSB0"
+LOGFILE=/cdem_log
 
 wait_file() {
   local file="$1"; shift
@@ -17,7 +18,7 @@ do
   echo "Found CDEM device"
 
   echo "Starting to log messages"
-  cat "$DEVICE" | sed -u '/^$/d' | ts
+  cat "$DEVICE" | sed -u '/^$/d' | ts >> "$LOGFILE"
 
   echo "Lost the CDEM device"
 done
